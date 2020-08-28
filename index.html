@@ -26,11 +26,11 @@
         /* backdrop-filter: rgba(186, 220, 223, 0.377); */
         /* background-size: contain; */
         background-size: 100% 600px;
-        /* background-color: #2e2933; */
+        background-color: #eef2f39f;
     }
 
     .body-container {
-        background-color: rgba(0, 0, 0, 0.356);
+        background-color: rgba(0, 0, 0, 0.116);
     }
 
     .navbar {
@@ -38,12 +38,29 @@
         background: #11998e93;
     }
 
+    .navbar i {
+        font-size: 50px;
+        animation: rotation 15s linear infinite;
+        transform-style: preserve-3d;
+    }
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(359deg);
+        }
+    }
+
     .mid-container {
         color: rgb(255, 255, 255);
         width: 90%;
         margin: auto;
         padding: 20px;
-        
+        padding-top: 50px;
+
     }
 
     /* #count{
@@ -52,12 +69,17 @@
         
     } */
 
-    
-    .container{
+
+    .container {
         padding-bottom: 50px;
     }
 
-    #suggestion{
+    .card{
+		box-shadow: inset 5px 5px 10px 2px grey;
+		transform:scale(0.8) rotate(-5deg);
+	}
+
+    #suggestion {
         font-family: 'Tangerine', serif;
     }
 
@@ -65,51 +87,83 @@
         cursor: pointer;
         box-shadow: 1px 0px 10px -1px rgba(14, 17, 19, 0.226);
         transform: scale(1.05);
+        padding: 0px;
+		/*height: 400px;*/
+		/* transform:scale(1) rotate(0deg); */
+		/*margin: 10px;*/
     }
+
+    /* .card p{
+		display: none;
+	} */
 
     .row {
         margin: 20px;
     }
+
+    /* .card img{
+		padding: 0px;
+		margin: 10px;
+
+	} */
+
+	.card:hover img{
+		margin: 0px;
+		height: 250px;
+	}
+
+	/* .card:hover p{
+		display: inline-block;
+		height: 70px;
+		margin: 8px;
+		text-align: center;
+		overflow-y: scroll;
+		font-weight: bold;
+	} */
+
 </style>
 
 <body>
     <div class="body-container">
 
-        <div class="navbar">
+        <div class="navbar fixed-top">
             <h4><span><i class="fa fa-globe"></i>&nbsp&nbsp</span>Find beauty around you</h4>
         </div>
-    
+
         <div class="mid-container">
             <div class="row">
                 <div id="address" class="col-md-6"></div>
                 <div id="count" class="col-md-6 text-light"></div>
             </div>
-            <div id="suggestion"><h2 style="font-size: 40px;"><span><i class="fa fa-envelope"></i>&nbsp&nbsp</span>Click on images for clear view</h2></div>
-    
+            <div id="suggestion">
+                <h2 style="font-size: 40px;color:#38ef7d"><span><i class="fa fa-envelope"></i>&nbsp&nbsp</span>Click on
+                    images for clear view</h2>
+            </div>
+
         </div>
 
-        
-    
+
+
         <div class="container">
-            
+
             <div id='city' class="row">
-    
+
             </div>
             <div id='state' class="row">
-    
+
             </div>
-    
+
             <div id='country' class="row">
-    
+
             </div>
             <div id='continent' class="row">
-    
+
             </div>
         </div>
 
     </div>
 
-    
+
     <script src='app.js'></script>
 </body>
 
