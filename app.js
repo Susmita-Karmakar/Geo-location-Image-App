@@ -32,12 +32,13 @@ if ('geolocation' in navigator) {
                     <div class="card p-0 m-0">
                     
                     <a  href="${data['imageUrllg']}"  target="_blank">
-                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:250px; width:100%" >
+                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:300px; width:100%;padding:0px;" >
                     </a>
                     
-                     </div>
+                    
                     </div>
-                       `
+                    </div>
+                    `
                 }
                 if (element == state) {
                     id = "state"
@@ -45,11 +46,12 @@ if ('geolocation' in navigator) {
                     strCreation = `<div class="col-md-4 mt-3">
                     <div class="card p-0 m-0">
                     <a  href="${data['imageUrllg']}"  target="_blank">
-                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:250px; width:100%" >
+                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:300px; width:100%;padding:0px;" >
                     </a>
-                     </div>
+                    
                     </div>
-                       `
+                    </div>
+                    `
 
                 }
                 if (element == country) {
@@ -60,12 +62,13 @@ if ('geolocation' in navigator) {
                     <div class="card p-0 m-0">
                     
                     <a  href="${data['imageUrllg']}"  target="_blank">
-                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:250px; width:100%" >
+                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:300px; width:100%;padding:0px;" >
                     </a>
+                    
 
-                     </div>
                     </div>
-                       `
+                    </div>
+                    `
                 }
 
                 if (element == continent) {
@@ -76,16 +79,21 @@ if ('geolocation' in navigator) {
                     <div class="card p-0 m-0">
                     
                     <a  href="${data['imageUrllg']}"  target="_blank">
-                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:250px; width:100%" >
+                    <img class="img-thumbnail" src="${data['imageUrltm']}" alt="${id}" style="height:300px; width:100%;padding:0px" >
                     </a>
                     
-                     </div>
+                    
+                    
                     </div>
-                       `
+                    </div>
+                    `
                 }
+                // <p>${data['description']}</p>
+
+
                 if (count!=0){
                     
-                    document.getElementById('count').innerHTML=`<h4 style="color: rgb(128, 255, 0);">loading.. in..<span style="font-size:${fsize=fsize+4}px;margin:auto;">${count=count-1}</span><\h4>`
+                    document.getElementById('count').innerHTML=`<h4 style="color: rgb(128, 255, 0);">Loading.. in..<span style="font-size:${fsize=fsize+4}px;margin:auto;">${count=count-1}</span><\h4>`
                 }
                 else{
                     document.getElementById('count').innerHTML=``
@@ -109,7 +117,7 @@ if ('geolocation' in navigator) {
     });
 }
 else {
-    console.log('geolocation is not avalable');
+    console.log('Geolocation is not available');
 }
 
 
@@ -128,6 +136,8 @@ async function fetch_image_by_location_name(name) {
 
     let imageUrltm = image['urls']['thumb'];
     let imageUrllg = image['urls']['regular'];
+
+    // let description = image['alt_description'];
     
     let imageUrl='blog.jpg'
     let imageobj={imageUrltm,imageUrllg}
